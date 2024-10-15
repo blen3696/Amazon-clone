@@ -12,7 +12,7 @@ function Header() {
        
         />
         <div className='header_search'>
-         <input className='header_searchInput' type='text' />
+         <input className='header_searchInput' type='text' placeholder='Search Amazon' />
          <SearchIcon className='header_searchIcon' />
         </div>
         <div className='header_nav'>
