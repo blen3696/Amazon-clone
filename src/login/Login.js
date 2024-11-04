@@ -1,17 +1,41 @@
 import React, { useState } from 'react'
 import './login.css'
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase/Firebase';
+import { signInWithEmailAndPassword ,createUserWithEmailAndPassword } from 'firebase/auth';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const signIn = (e) => {
         e.preventDefault();
-    }
+
+        try {
+          // Use Firebase authentication API to sign in
+          auth.signInWithEmailAndPassword(email, password);
+    
+          // Redirect the user to the desired page (e.g., home)
+          navigate("/");
+        } catch (error) {
+          alert(error.message);
+        }
+      };
+    
     const register = (e) => {
       e.preventDefault();
-  }
+
+      try {
+         auth.createUserWithEmailAndPassword(email, password);
+  
+        navigate("/");
+      } catch (error) {
+        alert(error.message);
+      }
+    };
+
   return (
     <div className="login">
     <Link to={"/"}>

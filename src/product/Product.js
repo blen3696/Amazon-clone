@@ -1,6 +1,5 @@
 import React from 'react'
 import './Product.css'
-import test from '../images/test.jpg'
 import { useStateValue } from '../stateprovider/StateProvider'
 
 
