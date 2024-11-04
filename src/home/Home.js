@@ -9,9 +9,32 @@ const Home = () => {
         <div>
             <img className='home__image'
             src={backgroundImage} />
+             <div className='home__row '>
+                  <Product 
+                   id="49538094"
+                   title="Kenwood kMix Stand Mixer for Baking, Stylish Kitchen Mixer with K-beater, Dough Hook and Whisk, 5 Litre Glass Bowl"
+                   price={239.0}
+                   rating={4}
+                   image="https://images-na.ssl-images-amazon.com/images/I/81O%2BGNdkzKL._AC_SX450_.jpg"
+                  />
+                  <Product 
+                  id="3"
+                  title="Mens Cotton Jacket"
+                  price={499}
+                  rating={5}
+                  image="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+                  />
+                  <Product 
+                   id="4"
+                   title="Mens Casual Slim Fit"
+                   price={699}
+                   rating={3}
+                   image="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+                  />
+                  </div>
              <div className="home__row">
           <Product
-            id="4903850"
+            id="3005"
             title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor"
             price={199.99}
             rating={3}
