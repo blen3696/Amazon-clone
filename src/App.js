@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './header/Header';
+import Fotter from './footer/Footer'
 import Home from './home/Home';
 import Checkout from './checkout/Checkout';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
@@ -43,6 +44,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
 
       </Routes>
+      <Fotter />
     </div>
     </Router>
   );
