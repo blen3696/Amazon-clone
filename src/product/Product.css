@@ -5,7 +5,7 @@
     justify-content: flex-end;
     margin: 10px;
     padding: 20px;
-    width: 100%;
+    width: 95%;
     max-height: 500px;
     min-width: 100px;
     background-color: white;
@@ -30,11 +30,13 @@
   }
   
   .product>button {
+    width: 120px;
+    height: 25px;
     background: #f0c14b;
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: 10px;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    border: none;
     color: #111;
     transition: background-color 0.3s ease;
   }
@@ -49,7 +51,7 @@
   }
   
   .product:hover {
-    transform: scale(1.04);
+    transform: scale(1.02);
   }
   
   .product>button:hover,

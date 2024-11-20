@@ -8,6 +8,7 @@
 .checkoutProduct__image {
     object-fit: contain;
     width: 180px;
+    max-width: 200px;
     height: 180px;
 }
 
@@ -43,11 +44,12 @@
     background-color: #f0c14b;
     border: 1px solid;
     padding: 2px 5px;
+    padding: 5px 10px;
     margin-top: 5px;
-    border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    border: none;
     transition: background-color 0.3s ease;
-    border-radius: 3px;
+    border-radius: 5px;
     margin-top: 10px;
 }
 
