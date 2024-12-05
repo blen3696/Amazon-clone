@@ -79,10 +79,11 @@ const Login = () => {
         Interest-Based Ads Notice.
       </p>
 
-      <button className="login__registerButton"
+    <button className="login__registerButton"
       onClick={register} >
         Create your Amazon Account
       </button>
+     
     </div>
   </div>
   )

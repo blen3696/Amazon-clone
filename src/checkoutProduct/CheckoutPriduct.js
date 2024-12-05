@@ -2,10 +2,10 @@ import React from 'react'
 import './checkoutProduct.css'
 import { useStateValue } from '../stateprovider/StateProvider'
 
-const CheckoutPriduct = ({id,image,title,price,rating}) => {
+const CheckoutPriduct = ({id,image,title,price,rating,hideButton}) => {
     const [{basket}, dispatch] = useStateValue()
 
-    const renoveFromBasket = () =>{
+    const removeFromBasket = () =>{
         dispatch({
             type: "REMOVE_FROM_BASKET",
             id : id
@@ -27,8 +27,12 @@ const CheckoutPriduct = ({id,image,title,price,rating}) => {
               <p>🌟</p>
             ))}
            </div>
-       
-        <button onClick={renoveFromBasket} className='checkoutProduct__removeButton'> Remove from Basket</button>
+           {/* Conditionally render the button if hideButton is not true */}
+           {!hideButton && (
+                    <button onClick={removeFromBasket} className='checkoutProduct__removeButton'>
+                        Remove from Basket
+                    </button>
+                )}
         </div>
     </div>
 

@@ -9,7 +9,13 @@ import Login from './login/Login';
 import { useStateValue} from './stateprovider/StateProvider';
 import { auth } from './firebase/Firebase';
 import { useEffect } from 'react';
+import  Payment  from './payment/Payment';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import Orders from './orders/Orders';
 
+
+const promis = loadStripe('pk_test_51QNHe7C7ZyN2MUI2Q6jV7BqzIob6n3XccWxgXaZjzUPdRjBvPy4s94srBgoTlkdUoEdnOCQI2bjo8kE0mGcuYLdj00qAe4iBCc')
 function App() {
   const [{ basket, user }, dispatch] = useStateValue();
 
@@ -41,6 +47,8 @@ function App() {
         
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/orders" element={<Orders />}></Route>
+        <Route path="/payment" element={ <Elements stripe={promis}><Payment /></Elements>}></Route>
         <Route path="/" element={<Home />}></Route>
 
       </Routes>

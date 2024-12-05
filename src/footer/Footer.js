@@ -1,56 +1,87 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import './footer.css';
+import { ExpandMore, ExpandLess } from '@mui/icons-material';
 
 const Footer = () => {
+  const [activeSection, setActiveSection] = useState(null);
+
+  const toggleSection = (index) => {
+    setActiveSection(activeSection === index ? null : index);
+  };
+
+  const sections = [
+    {
+      title: "Get to Know Us",
+      items: [
+        "Careers",
+        "Blog",
+        "About Amazon",
+        "Investor Relations",
+        "Amazon Devices",
+        "Amazon Science",
+      ],
+    },
+    {
+      title: "Make Money with Us",
+      items: [
+        "Sell products on Amazon",
+        "Sell on Amazon Business",
+        "Sell apps on Amazon",
+        "Become an Affiliate",
+        "Advertise Your Products",
+        "Self-Publish with Us",
+        "Host an Amazon Hub",
+        "See More Make Money with Us",
+      ],
+    },
+    {
+      title: "Amazon Payment Products",
+      items: [
+        "Amazon Business Card",
+        "Shop with Points",
+        "Reload Your Balance",
+        "Amazon Currency Converter",
+      ],
+    },
+    {
+      title: "Let Us Help You",
+      items: [
+        "Amazon and COVID-19",
+        "Your Account",
+        "Your Orders",
+        "Shipping Rates & Policies",
+        "Returns & Replacements",
+        "Manage Your Content and Devices",
+        "Amazon Assistant",
+        "Help",
+      ],
+    },
+  ];
+
   return (
     <footer className="footer">
-      <div className="footer__section">
-        <h4>Get to Know Us</h4>
-        <ul>
-          <li>Careers</li>
-          <li>Blog</li>
-          <li>About Amazon</li>
-          <li>Investor Relations</li>
-          <li>Amazon Devices</li>
-          <li>Amazon Science</li>
-        </ul>
-      </div>
-      <div className="footer__section">
-        <h4>Make Money with Us</h4>
-        <ul>
-          <li>Sell products on Amazon</li>
-          <li>Sell on Amazon Business</li>
-          <li>Sell apps on Amazon</li>
-          <li>Become an Affiliate</li>
-          <li>Advertise Your Products</li>
-          <li>Self-Publish with Us</li>
-          <li>Host an Amazon Hub</li>
-          <li>See More Make Money with Us</li>
-        </ul>
-      </div>
-      <div className="footer__section">
-        <h4>Amazon Payment Products</h4>
-        <ul>
-          <li>Amazon Business Card</li>
-          <li>Shop with Points</li>
-          <li>Reload Your Balance</li>
-          <li>Amazon Currency Converter</li>
-        </ul>
-      </div>
-      <div className="footer__section">
-        <h4>Let Us Help You</h4>
-        <ul>
-          <li>Amazon and COVID-19</li>
-          <li>Your Account</li>
-          <li>Your Orders</li>
-          <li>Shipping Rates & Policies</li>
-          <li>Returns & Replacements</li>
-          <li>Manage Your Content and Devices</li>
-          <li>Amazon Assistant</li>
-          <li>Help</li>
-        </ul>
-      </div>
+      {sections.map((section, index) => (
+        <div className="footer__section" key={index}>
+          <div className="footer__header">
+            <h4>{section.title}</h4>
+            <button
+              className="footer__toggle"
+              onClick={() => toggleSection(index)}
+            >
+              {activeSection === index ? <ExpandLess /> : <ExpandMore />}
+            </button>
+          </div>
+          <ul
+            className={`footer__list ${
+              activeSection === index ? "footer__list--active" : ""
+            }`}
+          >
+            {section.items.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </footer>
   );
 };

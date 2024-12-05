@@ -1,14 +1,51 @@
-import React from 'react'
-import "./home.css"
-import backgroundImage from '../images/hero image.jpg'
-import Product from '../product/Product'
+import React, { useState, useEffect } from 'react';
+import { IconButton } from '@mui/material';
+import { ArrowLeft, ArrowRight } from '@mui/icons-material';  // Arrow icons from Material UI
+import './home.css'; 
+import Product from '../product/Product' // Assuming this is your styling file
+import backgroundImage1 from '../images/10015.jpg';  // Import your images
+import backgroundImage2 from '../images/10009.jpg';
+import backgroundImage3 from '../images/10012.jpg';
+import backgroundImage4 from '../images/10001.jpg';
+import backgroundImage5 from '../images/10010.jpg';
+import backgroundImage6 from '../images/10014.jpg';
+import backgroundImage7 from '../images/10013.jpg';
+
+const images = [backgroundImage1, backgroundImage2, backgroundImage3,backgroundImage4,backgroundImage5,backgroundImage6,backgroundImage7]; // Array of images
 
 const Home = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track the current image index
+
+  // Change image every 5 seconds automatically
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);  // Loop back to the first image
+    }, 8000);  // Change every 5 seconds
+
+    // Cleanup the interval when component unmounts
+    return () => clearInterval(intervalId);
+  }, []);
+
+  // Functions to handle left and right button clicks
+  const handlePrevClick = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);  // Go to the previous image
+  };
+
+  const handleNextClick = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);  // Go to the next image
+  };
+
   return (
-    <div className='home'>
-        <div>
-            <img className='home__image'
-            src={backgroundImage} />
+    <div className="home">
+      {/* Banner Section */}
+      <div className="home__banner">
+       
+
+        {/* Banner Image */}
+        <img className="home__image" src={images[currentImageIndex]} alt="Banner" />
+
+        
+      </div>
              <div className='home__row '>
              <Product
             id="3254354345"
@@ -34,13 +71,6 @@ const Home = () => {
                   </div>
              <div className="home__row">
           
-             <Product 
-                   id="4"
-                   title="Mens Casual Slim Fit"
-                   price={699}
-                   rating={3}
-                   image="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
-                  />
           <Product
             id="23445930"
             title="Amazon Echo (3rd generation) | Smart speaker with Alexa, Charcoal Fabric"
@@ -66,6 +96,13 @@ const Home = () => {
         
         </div>
             <div className='home__row '>
+              <Product 
+                    id="4"
+                    title="Mens Casual Slim Fit"
+                    price={699}
+                    rating={3}
+                    image="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+                   />
                   <Product 
                    id="1"
                    title="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
@@ -104,18 +141,9 @@ const Home = () => {
                    image="https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
                   />
             </div>
-            <div className='home__row '>
-                  <Product 
-                   id="90829332"
-                   title="Samsung LC49RG90SSUXEN 49' Curved LED Gaming Monitor - Super Ultra Wide Dual WQHD 5120 x 1440"
-                   price={1094.98}
-                   rating={4}
-                   image="https://images-na.ssl-images-amazon.com/images/I/6125mFrzr6L._AC_SX355_.jpg"
-                  />
-                  
-            </div>
+           
         </div>
-    </div>
+    
   )
 }
 

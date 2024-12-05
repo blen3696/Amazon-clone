@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: fit-content;
 }
 
 .login__logo {
@@ -16,13 +17,14 @@
   }
 
 .login__container {
-    width: 300px;
+    width: 27%;
     height: fit-content;
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 7px;
     border: 1px solid lightgray;
     padding: 20px;
+    margin-bottom: 10vh;
 }
 
 .login__container > h1 {
@@ -56,12 +58,24 @@
   }
 
   .login__registerButton {
-    border-radius: 5px;
+    border-radius: 7px;
     width: 100%;
+    margin-top: 20px;
     height: 30px;
     border: 1px solid;
-    margin-top: 10px;
     border-color: darkgray;
   }
   
+  @media (min-width: 576px) and (max-width: 767px) {
+    /* CSS styles for devices between 576px and 767px */
+    .login__container {
+      width: 45%;
+    }
+}
+@media (max-width: 575px) {
+  /* CSS styles for devices up to 575px */
+  .login__container {
+    width: 60%;
+  }
+}
   
