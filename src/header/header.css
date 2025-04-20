@@ -17,6 +17,7 @@
   object-fit: contain;
 }
 
+
 .header_search {
   display: flex;
   flex: 1;
@@ -29,7 +30,7 @@
   height: 13px;
   padding: 10px;
   border: none;
-  width: 100%;
+  width: 90%;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
@@ -52,13 +53,14 @@
 .header_options {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  margin: 0 10px;
+  text-align: left;
+  margin: 0 5px;
   color: white;
 }
 
 .header_optionLineOne {
   font-size: 10px;
+  color: rgb(232, 224, 224);
 }
 
 .header_optionLineTwo {
@@ -73,13 +75,21 @@
 }
 
 .header_basketCount {
-  margin-left: 10px;
+  margin-left: 4px;
   margin-right: 10px;
+  color: #cd9842;
 }
 
 .header_clearLinks {
   text-decoration: none;
   color: inherit;
+}
+.hover_effect{
+  padding: 4px;
+  border-radius: 3px;
+}
+.hover_effect:hover{
+  border: 2px solid rgb(232, 224, 224);
 }
 
 /* Responsive styles */

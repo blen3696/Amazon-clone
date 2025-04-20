@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './footer.css';
+import logo from '../images/logo.png'
 import { ExpandMore, ExpandLess } from '@mui/icons-material';
 
 const Footer = () => {
@@ -59,31 +60,46 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="footer">
-      {sections.map((section, index) => (
-        <div className="footer__section" key={index}>
-          <div className="footer__header">
-            <h4>{section.title}</h4>
-            <button
-              className="footer__toggle"
-              onClick={() => toggleSection(index)}
+    <footer>
+      <div className="footer">
+        {sections.map((section, index) => (
+          <div className="footer__section" key={index}>
+            <div className="footer__header">
+              <h4>{section.title}</h4>
+              <button
+                className="footer__toggle"
+                onClick={() => toggleSection(index)}
+              >
+                {activeSection === index ? <ExpandLess /> : <ExpandMore />}
+              </button>
+            </div>
+            <ul
+              className={`footer__list ${
+                activeSection === index ? "footer__list--active" : ""
+              }`}
             >
-              {activeSection === index ? <ExpandLess /> : <ExpandMore />}
-            </button>
+              {section.items.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
           </div>
-          <ul
-            className={`footer__list ${
-              activeSection === index ? "footer__list--active" : ""
-            }`}
-          >
-            {section.items.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        ))}
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="footer__bottom-bar">
+        <img
+          src={logo}
+          alt="Amazon"
+          className="footer__logo"
+        />
+        <div className="footer__option">🌐 English</div>
+        <div className="footer__option">$ USD - U.S. Dollar</div>
+        <div className="footer__option">🇺🇸 United States</div>
+      </div>
     </footer>
   );
 };
 
 export default Footer;
+

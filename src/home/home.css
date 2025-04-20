@@ -7,6 +7,7 @@
   width: 100%;
   margin: 0; /* Remove any margin at the top */
   padding-top: 0;
+  padding-bottom: 10vh;
   max-width: 1500px;
   background-color: #EAEDED;
 }
@@ -15,7 +16,9 @@
   
   position: relative;
   top: -40px;
-  width: 100%;
+  width: 84%;
+  margin-left: auto;
+  margin-right: auto;
   height: 300px; /* Adjust the height of the banner */
 }
 
@@ -68,7 +71,7 @@ width: 100%;
 height: auto;
 object-fit: cover;
 z-index: -1;
-margin-bottom: -200px;
+margin-bottom: -150px;
 mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
@@ -76,11 +79,11 @@ mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 .home__row {
 display: grid;
 grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
-gap: 7%; /* Gap between grid items */
-width: 80%; /* Set the width of the row to 80% of the container */
+gap: 10%; /* Gap between grid items */
+width: 77%; /* Set the width of the row to 80% of the container */
 margin-left: auto;
 margin-right: auto;
-margin-bottom: 10vh; /* Add bottom margin between rows */
+margin-bottom: 5vh; /* Add bottom margin between rows */
 justify-items: center; /* Center products horizontally */
 align-items: center; /* Center products vertically */
 }
@@ -124,6 +127,9 @@ transform: scale(1.05); /* Slight zoom effect on hover */
   margin: 0 auto;
 }
 }
+
+
+
 
 
 

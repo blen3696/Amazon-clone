@@ -7,7 +7,7 @@ import backgroundImage1 from '../images/10015.jpg';  // Import your images
 import backgroundImage2 from '../images/10009.jpg';
 import backgroundImage3 from '../images/10012.jpg';
 import backgroundImage4 from '../images/10001.jpg';
-import backgroundImage5 from '../images/10010.jpg';
+import backgroundImage5 from '../images/10002.jpg';
 import backgroundImage6 from '../images/10014.jpg';
 import backgroundImage7 from '../images/10013.jpg';
 
@@ -20,7 +20,7 @@ const Home = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);  // Loop back to the first image
-    }, 8000);  // Change every 5 seconds
+    }, 4000);  // Change every 5 seconds
 
     // Cleanup the interval when component unmounts
     return () => clearInterval(intervalId);

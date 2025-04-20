@@ -20,7 +20,7 @@ function Header() {
   return (
     <div className='header'>
       <Link to={'/'}>
-        <img className='header_logo'
+        <img className='header_logo hover_effect'
         src={logo}
        
         />
@@ -29,25 +29,30 @@ function Header() {
          <input className='header_searchInput' type='text' placeholder='Search Amazon' />
          <SearchIcon className='header_searchIcon' />
         </div>
-        <div className='header_nav'>
+        <div className='header_nav '>
+         <div className='header_options hover_effect'>
+                <span className='header_optionLineOne'>Deliver To</span>
+                <span className='header_optionLineTwo'>Ethiopia</span>
+            </div>
             <Link to={!user && '/login'} className='header_clearLinks'>
-            <div className='header_options' onClick={handleAuthentication} >
+            <div className='header_options hover_effect' onClick={handleAuthentication} >
                 <span className='header_optionLineOne'>Hello, {!user ? 'Guest' : user.email.split("@")[0]}</span>
                 <span className='header_optionLineTwo' > {!user ? 'Sign In' : 'Sign Out'}</span>
             </div>
             </Link>
+
             <Link to={'/orders'} className='header_clearLinks'>
-            <div className='header_options'>
+            <div className='header_options hover_effect'>
                 <span className='header_optionLineOne'>Returns</span>
                 <span className='header_optionLineTwo'>& Orders</span>
             </div>
             </Link>
-            <div className='header_options'>
+            <div className='header_options hover_effect'>
                 <span className='header_optionLineOne'>Your</span>
                 <span className='header_optionLineTwo'>Prime</span>
             </div>
             <Link to={'/checkout'} className='header_clearLinks'>
-            <div className='header_optionBasket'>
+            <div className='header_optionBasket hover_effect'>
               <ShoppingBasketIcon />
               <span className='header_optionLineTwo header_basketCount '>{basket.length}</span>
             </div>
