@@ -17,16 +17,16 @@ A full-stack e-commerce web application that mimics core functionalities of Amaz
 ## 🖼️ Preview
 
 ### 🏠 Home Page
-![Home Page](./src/screenshots/home.png)
+![Home Page](./screenshots/home.png)
 
 ### 🔐 Login Page
-![Login Page](./src/screenshots/login.png)
+![Login Page](./screenshots/login.png)
 
 ### 🛒 Checkout Page
-![Checkout Page](./src/screenshots/checkout.png)
+![Checkout Page](./screenshots/checkout.png)
 
 ### 💳 Payment Page
-![Payment Page](./src/screenshots/payment.png)
+![Payment Page](./screenshots/payment.png)
 
 ---
 
